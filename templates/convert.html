@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+DNA2Protein
+{% endblock title %}
+
+{% block body %}
+            <div id='columns'>
+                <ul>
+                    <li>
+                        <h1>DNA2Protein</h1>
+                        <h3>Zet je DNA sequentie om naar een eiwit</h3>
+                        <form method='post'>
+                            <label for='seq'>Voer hier je DNA-sequentie in</label>
+                            <input type='text' name='seq'>
+                            <button name='forwardBtn' type='submit'>CONVERT!!</button>
+                        </form>
+                        <p>{{ protein }}</p>
+                    </li>
+                </ul>
+            </div>
+{% endblock body %}
