@@ -19,15 +19,18 @@ def index() -> str:
 @app.route("/convert", methods=['POST', 'GET'])
 def convert() -> str:
     dna = request.form.get('seq')
-    print(dna)
-    try:
-        sequence = Seq(str(dna))
-        return render_template('convert.html',
-                               protein=sequence.translate())
-    except:
-        return render_template('convert.html',
-                               protein='Error')
+
+    if dna:
+        try:
+            sequence = Seq(str(dna))
+            return render_template('convert.html',
+                                   protein=sequence.translate())
+        except:
+            return render_template('convert.html',
+                                   protein='Error')
+    else:
+        return render_template('convert.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=80, debug=False)
