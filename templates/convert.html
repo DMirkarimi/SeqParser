@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-DNA2Protein
+SequenceParse
 {% endblock title %}
 
 {% block body %}
             <div id='columns'>
                 <ul>
                     <li>
-                        <h1>DNA2Protein</h1>
-                        <h3>Zet je DNA sequentie om naar een eiwit</h3>
+                        <h1>SequenceParse</h1>
+                        <h3>Parst sequenties</h3>
                         <form method='post'>
-                            <label for='seq'>Voer hier je DNA-sequentie in</label>
+                            <label for='seq'>Voer hier je sequentie in</label>
                             <input type='text' name='seq'>
                             <button name='forwardBtn' type='submit'>CONVERT!!</button>
                         </form>
-                        <p>{{ protein }}</p>
+                        <pre>{{output }}</pre>
                     </li>
                 </ul>
             </div>
